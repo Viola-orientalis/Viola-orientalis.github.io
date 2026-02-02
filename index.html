@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>문루 (Moonru) | 달빛 아래 기록</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Serif+KR:wght@300;400;700&family=Noto+Sans+KR:wght@300;400&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --bg-color: #050810;
+            --navy-deep: #0B132B;
+            --gold-accent: #D4AF37;
+            --text-main: #E2E8F0;
+            --text-dim: #94A3B8;
+        }
+
+        body {
+            background-color: var(--bg-color);
+            color: var(--text-main);
+            font-family: 'Noto Sans KR', sans-serif;
+            scroll-behavior: smooth;
+        }
+
+        .serif { font-family: 'Noto Serif KR', serif; }
+
+        /* 후광(Moon) 효과 */
+        .moon-halo {
+            position: relative;
+            width: 280px;
+            height: 280px;
+            background: radial-gradient(circle, rgba(212, 175, 55, 0.4) 0%, rgba(212, 175, 55, 0.1) 50%, transparent 70%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 0 60px rgba(212, 175, 55, 0.15);
+        }
+
+        .moon-core {
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            background: #fff;
+            filter: blur(2px);
+            border-radius: 50%;
+            opacity: 0.9;
+            box-shadow: 0 0 40px #fff;
+        }
+
+        /* 아이콘 실루엣 처리 */
+        .calligraphy-icon {
+            position: relative;
+            z-index: 10;
+            width: 220px;
+            height: auto;
+            /* 이미지의 검은색 부분만 남기고 실루엣으로 보이게 처리 (이미지가 투명 PNG일 때 최적) */
+            filter: brightness(0); 
+            transition: transform 0.5s ease;
+        }
+
+        .moon-halo:hover .calligraphy-icon {
+            transform: scale(1.05);
+        }
+
+        /* 아티클 카드 커스텀 */
+        .article-card {
+            border-bottom: 1px solid rgba(148, 163, 184, 0.1);
+            transition: all 0.3s ease;
+        }
+        .article-card:hover {
+            border-bottom-color: var(--gold-accent);
+            padding-left: 8px;
+        }
+
+        /* 부드러운 스크롤 페이드인 */
+        .fade-in {
+            animation: fadeIn 1.5s ease forwards;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 네비게이션 -->
+    <nav class="fixed w-full z-50 px-6 py-8 flex justify-between items-center bg-gradient-to-b from-[#050810] to-transparent">
+        <div class="serif text-xl font-bold tracking-widest text-white">MOONRU</div>
+        <div class="flex gap-8 text-sm font-light tracking-tighter opacity-70">
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">서재</a>
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">기록</a>
+            <a href="#" class="hover:text-[#D4AF37] transition-colors">소개</a>
+        </div>
+    </nav>
+
+    <!-- 히어로 섹션 -->
+    <header class="min-h-screen flex flex-col items-center justify-center pt-20">
+        <div class="moon-halo mb-12 fade-in">
+            <div class="moon-core"></div>
+            <!-- 업로드하신 988.png 이미지를 사용합니다 -->
+            <img src="988.png" alt="樓 Calligraphy" class="calligraphy-icon" onerror="this.src='https://img.icons8.com/ios-filled/250/000000/character.png'; this.style.filter='none';">
+        </div>
+        
+        <div class="text-center fade-in" style="animation-delay: 0.3s;">
+            <h2 class="serif text-4xl md:text-5xl mb-4 font-light tracking-widest">문루 (樓)</h2>
+            <p class="text-sm md:text-base text-slate-400 tracking-[0.3em] font-light">고요한 밤, 달빛 아래 머무는 글자들</p>
+        </div>
+
+        <a href="#content" class="absolute bottom-10 animate-bounce opacity-30">
+            <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1" stroke-linecap="round" stroke-linejoin="round"><path d="M7 13l5 5 5-5M7 6l5 5 5-5"/></svg>
+        </a>
+    </header>
+
+    <!-- 콘텐츠 섹션 -->
+    <main id="content" class="max-w-2xl mx-auto px-6 py-24">
+        
+        <div class="mb-20 text-center">
+            <p class="serif text-lg italic text-slate-400 leading-relaxed">
+                "이곳은 소란한 세상을 잠시 뒤로하고,<br>
+                정제된 생각과 깊은 사유를 담아내는 다락입니다."
+            </p>
+        </div>
+
+        <!-- 글 목록 -->
+        <section class="space-y-12">
+            
+            <article class="article-card py-10">
+                <time class="text-xs text-yellow-600/60 font-mono tracking-widest block mb-3">2026. 02. 01</time>
+                <h3 class="serif text-2xl mb-4 hover:text-[#D4AF37] cursor-pointer transition-colors">기록의 의미에 대하여</h3>
+                <p class="text-slate-400 leading-relaxed font-light mb-6">
+                    글을 쓴다는 것은 흘러가는 시간을 종이 위에 붙잡아 두는 행위입니다. 붓 끝에서 번지는 먹향처럼, 우리의 생각도 누군가의 마음 속에 깊게 스며들 수 있을까요?
+                </p>
+                <a href="#" class="text-xs tracking-widest text-[#D4AF37] uppercase font-bold">Read More</a>
+            </article>
+
+            <article class="article-card py-10">
+                <time class="text-xs text-yellow-600/60 font-mono tracking-widest block mb-3">2026. 01. 24</time>
+                <h3 class="serif text-2xl mb-4 hover:text-[#D4AF37] cursor-pointer transition-colors">여백의 미, 그리고 채워지지 않는 공간</h3>
+                <p class="text-slate-400 leading-relaxed font-light mb-6">
+                    수묵화에서 가장 중요한 것은 그려진 곳보다 그려지지 않은 곳입니다. 우리의 삶도 빼곡한 계획보다는 가끔은 비워둔 여백에서 진정한 평온을 찾게 됩니다.
+                </p>
+                <a href="#" class="text-xs tracking-widest text-[#D4AF37] uppercase font-bold">Read More</a>
+            </article>
+
+            <article class="article-card py-10 border-none">
+                <time class="text-xs text-yellow-600/60 font-mono tracking-widest block mb-3">2026. 01. 15</time>
+                <h3 class="serif text-2xl mb-4 hover:text-[#D4AF37] cursor-pointer transition-colors">밤의 정적과 사색의 시간</h3>
+                <p class="text-slate-400 leading-relaxed font-light mb-6">
+                    모두가 잠든 시간, 홀로 깨어 문루에 앉아 있으면 달빛만이 나의 유일한 벗이 되어줍니다. 그 고요함 속에서 비로소 나 자신과 마주하는 대화를 시작합니다.
+                </p>
+                <a href="#" class="text-xs tracking-widest text-[#D4AF37] uppercase font-bold">Read More</a>
+            </article>
+
+        </section>
+
+        <!-- 푸터 -->
+        <footer class="mt-40 pt-20 border-t border-white/5 text-center">
+            <div class="mb-8 opacity-20">
+                <div class="w-1 h-12 bg-white mx-auto mb-4"></div>
+                <p class="serif text-sm italic">Moonru log</p>
+            </div>
+            <p class="text-[10px] text-slate-600 tracking-[0.5em] uppercase">© 2026 MOONRU. All rights reserved.</p>
+        </footer>
+
+    </main>
+
+</body>
+</html>
