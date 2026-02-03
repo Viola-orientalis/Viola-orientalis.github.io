@@ -1,0 +1,23 @@
+:root {
+  /* Oriental Palette */
+  --bg-deep-ink: #0a0a0b;        /* 깊은 먹색 배경 */
+  --bg-card-ink: #141416;        /* 약간 밝은 먹색 (카드용) */
+  --moonlight: #fdfcf0;          /* 달빛색 (텍스트/포인트) */
+  --moonlight-low: rgba(253, 252, 240, 0.6);
+  --stamp-red: #a11d1d;          /* 낙관(인장) 레드 */
+  --ink-gray: #2d2d30;           /* 수묵화의 중간 톤 */
+  
+  /* Typography */
+  --font-serif: 'Nanum Myeongjo', serif;
+  --font-sans: 'Noto Sans KR', sans-serif;
+
+  /* Spacing (여백의 미를 위한 넉넉한 설정) */
+  --space-unit: 1rem;
+  --yeobaek-lg: 5rem;
+  --yeobaek-md: 3rem;
+}
+
+/* Base Scrollbar - 어둠에 녹아들게 */
+::-webkit-scrollbar { width: 5px; }
+::-webkit-scrollbar-track { background: var(--bg-deep-ink); }
+::-webkit-scrollbar-thumb { background: var(--ink-gray); border-radius: 10px; }

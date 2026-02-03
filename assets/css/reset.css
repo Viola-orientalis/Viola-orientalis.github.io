@@ -1,0 +1,13 @@
+* { 
+    margin: 0; 
+    padding: 0; 
+    box-sizing: border-box; 
+}
+
+body {
+    background-color: var(--bg-deep-ink);
+    color: var(--text-silver);
+    font-family: var(--font-sans);
+    line-height: 1.7;
+    overflow: hidden; /* 목록을 치웠으므로 스크롤 제거 */
+}

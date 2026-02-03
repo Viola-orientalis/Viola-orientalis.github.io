@@ -1,0 +1,70 @@
+/* 카테고리 필터 - 젠 스타일 */
+.category-filter {
+  display: flex;
+  justify-content: center;
+  gap: 2rem;
+  margin-bottom: var(--yeobaek-md);
+}
+
+.filter-btn {
+  background: none;
+  border: none;
+  color: var(--moonlight-low);
+  font-family: var(--font-serif);
+  cursor: pointer;
+  transition: all 0.4s ease;
+  font-size: 1.1rem;
+  padding-bottom: 5px;
+  border-bottom: 1px solid transparent;
+}
+
+.filter-btn:hover, .filter-btn.active {
+  color: var(--moonlight);
+  border-bottom: 1px solid var(--moonlight);
+}
+
+/* 포스트 카드 - 실루엣 느와르 느낌 */
+.post-card {
+  margin-bottom: var(--yeobaek-md);
+  padding: var(--space-md);
+  transition: transform 0.3s ease;
+  border-left: 1px solid transparent;
+}
+
+.post-card:hover {
+  transform: translateX(10px);
+  border-left: 1px solid var(--stamp-red); /* 낙관 포인트 */
+}
+
+.post-meta {
+  font-size: 0.8rem;
+  text-transform: uppercase;
+  letter-spacing: 0.1rem;
+  margin-bottom: 0.5rem;
+}
+
+.post-title {
+  font-family: var(--font-serif);
+  color: var(--moonlight);
+  margin: 0 0 1rem 0;
+  font-weight: 400;
+  font-size: 1.5rem;
+}
+
+.post-excerpt {
+  font-weight: 300;
+  color: #888;
+}
+
+/* 실루엣 배경 효과 (가상 요소로 대나무 잎 등 표현 가능) */
+.silhouette-overlay {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 30vh;
+  background: linear-gradient(to top, rgba(10, 10, 11, 1), transparent);
+  z-index: -1;
+  opacity: 0.5;
+  /* 실제 구현 시 대나무 실루엣 SVG 등을 background-image로 넣으면 완벽함 */
+}
